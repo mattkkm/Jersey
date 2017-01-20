@@ -1,0 +1,15 @@
+.navbar-default{
+	background-color:#008000;
+}
+.navbar a{
+	color:white;
+	size:30px;
+}
+.sebm-google-map-container {
+	height: 300px;	
+}
+.bucks{
+	float:left;
+	height:100%;
+	width:100%;
+}

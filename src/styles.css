@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html { 
+  background-color: purple;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+}
+body{
+	height:100%;
+	width:100%;
+	padding-top:50px;
+}
+/*   url(images/pats.jpg) no-repeat center center fixed; 
+*/
