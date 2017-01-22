@@ -1,0 +1,64 @@
+.floatLeft{
+	//float:left;
+}
+.leftHalf{
+	padding:0px;
+	margin:0px;
+	height:100%;
+	//width:100%;
+	overflow:auto;
+}
+.normList{
+	width:100%;
+	height:90%;
+}
+.gameList{
+	width:100%;
+	height:90%;
+}
+.mapCunt{
+	padding: 0px;
+	height:100%;
+	background-color: white;
+}
+.centerInput{
+	min-height:10px;
+	background-color:lightgreen;
+	text-align:center;
+	height:10%;
+	float:left;
+	width:100%;
+	vertical-align:center;
+}
+.listContainer{
+	float:left;
+	width:100%;
+	height:100%;
+	min-height:100px;
+	
+}
+.listJerseys{
+	/*min-height:100px;*/
+	height:25%;
+	width:100%;
+	background-color:yellow;
+	border-color: green;
+	border-width:10px;
+	border-style: solid;
+	border-radius: 15px;
+}
+.inListJerseys{
+	height:100%;
+	display:flex;
+	align-items:center;
+}
+.rentBtn{
+	height:90%;
+	width:100%;
+	text-align:center;
+}
+
+.sebm-google-map-container {
+	height:100%;
+	width:100%;	
+}

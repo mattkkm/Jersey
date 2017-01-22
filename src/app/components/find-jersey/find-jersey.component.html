@@ -1,0 +1,35 @@
+
+<div class="leftHalf"  [ngClass]="displayText">
+	<div class="centerInput">
+		<span class="floatLeft">Hide Map Under<input type="checkbox" [(ngModel)]="berks" (click)="toggle(); bucks.triggerResize()"/> </span>
+		<br/>
+		<span class="floatLeft">For the Game!<input type="checkbox" [(ngModel)]="game" (click)="toggleGameView(); bucks.triggerResize()"/></span>
+	
+	</div>
+	<div class="gameList" [hidden]="!gameVisible">
+	bucks
+	</div>
+	<div class="normList" [hidden]="gameVisible">
+		<div class="listContainer">
+			<div class="listJerseys" *ngFor="let jersey of jerseys | async">
+				<div class="inListJerseys col-xs-3">{{jersey.name}}</div>
+				<div class="inListJerseys col-xs-3">{{jersey.team}} </div>
+				<div class="inListJerseys col-xs-3">{{jersey.number}} </div>
+				<div class=" inListJerseys col-xs-3">	
+					<button type="button" class="rentBtn btn btn-success" (click)="createJersey(jersey.name)">
+						Rent
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="mapCunt" [ngClass]="displayText">
+	
+	<sebm-google-map #bucks [latitude]="44.5008" [longitude]="-88.0573">
+	  	<sebm-google-map-marker *ngFor="let jersey of jerseys  | async" [latitude]="jersey.lat" [longitude]="jersey.long">
+		</sebm-google-map-marker>
+		<sebm-google-map-marker *ngFor="let jersey of markers" [latitude]="jersey.lat" [longitude]="jersey.long">
+		</sebm-google-map-marker>
+	</sebm-google-map>
+</div>

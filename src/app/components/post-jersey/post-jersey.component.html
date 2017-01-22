@@ -1,0 +1,27 @@
+<p>
+  post-jersey works!
+</p>
+<div class="postBox col-xs-offset-3 col-xs-6">
+	<!-- <form ng-submit="newSubmit()" #itemForm="ngForm">
+		<div class="form-group">
+			<input class="form-control" placeholder="Name of player">
+			<input class="form-control" placeholder="Team of player">
+			<input class="form-control" placeholder="Number of player">
+			<input class="form-control" placeholder="Cost of rental">
+			<input class="form-control" placeholder="Latitude of pickup">
+			<input class="form-control" placeholder="Longitude of pickup">
+		</div>
+		<button type="button" class="btn btn-default" (click)="postJersey()"> berrrkssubmit </button>
+		bucks
+	</form> -->
+		<div class="form-group">
+			<input [(ngModel)]="jersey.name" class="form-control" placeholder="Name of player">
+			<input [(ngModel)]="jersey.team"  class="form-control" placeholder="Team of player">
+			<input [(ngModel)]="jersey.number" class="form-control" placeholder="Number of player">
+			<input [(ngModel)]="jersey.price" class="form-control" placeholder="Cost of rental">
+			<input [(ngModel)]="jersey.lat" class="form-control" placeholder="Latitude of pickup">
+			<input [(ngModel)]="jersey.long" class="form-control" placeholder="Longitude of pickup">
+			<input [(ngModel)]="jersey.label" class="form-control" placeholder="Label">
+		</div>
+		<button type="button" class="btn btn-default" (click)="postJersey(jersey)"> berrrkssubmit </button>
+</div>
