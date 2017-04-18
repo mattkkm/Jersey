@@ -1,0 +1,31 @@
+<p>
+  checkout works!
+</p>
+<div class="review">
+	Review rental of Aaron Rodgers (Home) Jersey <br/>
+	Size:XXL <br/>
+	Receive on Jan 22, 2017 at main gate by owner.<br/>
+	Method of receiving: jersey owner drives it over.<br/>
+<br/>
+<div *ngIf="jersey">
+	berks {{jersey.team | async}}
+</div>
+<div *ngIf="!jersey">
+	FUCKING BASTARDS
+
+</div>
+Team: {{(jersey | async)?.team}} 
+Name: {{(jersey | async)?.name}} 
+Number: {{(jersey | async)?.number}} 
+Longitude: {{(jersey | async)?.long}} 
+Latitude: {{(jersey | async)?.lat}} 
+Team: {{(jersey | async)?.team}} 
+
+<br/>
+</div>
+<div class="checkout">
+	<button>
+		Checkout
+	</button>
+</div>
+

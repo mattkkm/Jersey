@@ -8,10 +8,16 @@ import { AppComponent } from './app.component';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 import {RouterModule, Routes} from '@angular/router';
-import { FindJerseyComponent } from './find-jersey/find-jersey.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PostJerseyComponent } from './post-jersey/post-jersey.component';
+
+import { FindJerseyComponent } from './components/find-jersey/find-jersey.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PostJerseyComponent } from './components/post-jersey/post-jersey.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+
+import { JerseyService } from './services/jersey.service';
+import { AuthService } from './services/auth.service';
+import { SplashComponent } from './splash/splash.component';
 
   export const config = {
     apiKey: "AIzaSyAmViLOgFcnfuNbdCSbH2eshwy0Xu907sI",
@@ -27,9 +33,12 @@ import { PostJerseyComponent } from './post-jersey/post-jersey.component';
   method: AuthMethods.Redirect
 };
   export const appRoutes: Routes = [
+    { path: '#', component: SplashComponent},
+    { path: '', redirectTo: '#', pathMatch: 'full'},
     { path: 'findJersey', component: FindJerseyComponent},
         { path: 'dashboard', component: DashboardComponent},
-        { path: 'postJersey', component: PostJerseyComponent}
+        { path: 'postJersey', component: PostJerseyComponent},
+        { path: 'checkout/:key', component: CheckoutComponent}
 ]
     
 @NgModule({
@@ -37,7 +46,9 @@ import { PostJerseyComponent } from './post-jersey/post-jersey.component';
     AppComponent,
     FindJerseyComponent,
     DashboardComponent,
-    PostJerseyComponent
+    PostJerseyComponent,
+    CheckoutComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +60,7 @@ import { PostJerseyComponent } from './post-jersey/post-jersey.component';
       {apiKey: 'AIzaSyAmViLOgFcnfuNbdCSbH2eshwy0Xu907sI'}
     )
   ],
-  providers: [],
+  providers: [JerseyService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

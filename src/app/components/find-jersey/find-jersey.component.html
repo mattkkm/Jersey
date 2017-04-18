@@ -1,22 +1,97 @@
 
+<!-- (click)="rentJersey(jersey.$key)" [routerLink]="['/checkout',  jersey.$key]"
+ -->						
 <div class="leftHalf"  [ngClass]="displayText">
-	<div class="centerInput">
-		<span class="floatLeft">Hide Map Under<input type="checkbox" [(ngModel)]="berks" (click)="toggle(); bucks.triggerResize()"/> </span>
-		<br/>
+	<div class="centerInput col-xs-12">
+		<div class="">
+			<span class="floatLeft">Hide Map Under<input type="checkbox" [(ngModel)]="berks" (click)="toggle(); bucks.triggerResize()"/> </span> 
 		<span class="floatLeft">For the Game!<input type="checkbox" [(ngModel)]="game" (click)="toggleGameView(); bucks.triggerResize()"/></span>
-	
+		</div>
+		<!-- <div class="col-xs-2">
+			<input  class="searchInput"> <br/>
+			<input class="searchInput"><br/>
+			<input  class="searchInput">
+		</div>
+		<div class="col-xs-6">
+			<input class="searchInput"><br/>
+		<span> Sort by distance from latitude: <input class="searchInput"></span><br/>
+		<span> Sort by distance from longitude: <input class="searchInput"></span>
+
+		</div> -->
 	</div>
 	<div class="gameList" [hidden]="!gameVisible">
 	bucks
 	</div>
 	<div class="normList" [hidden]="gameVisible">
-		<div class="listContainer">
-			<div class="listJerseys" *ngFor="let jersey of jerseys | async">
-				<div class="inListJerseys col-xs-3">{{jersey.name}}</div>
-				<div class="inListJerseys col-xs-3">{{jersey.team}} </div>
-				<div class="inListJerseys col-xs-3">{{jersey.number}} </div>
-				<div class=" inListJerseys col-xs-3">	
-					<button type="button" class="rentBtn btn btn-success" (click)="createJersey(jersey.name)">
+		<div class="listContainer"> <!--  *ngFor="let jersey of jerseys " -->
+			<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
+						Rent
+					</button>
+				</div>
+			</div>
+						<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
+						Rent
+					</button>
+				</div>
+			</div>
+						<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
+						Rent
+					</button>
+				</div>
+			</div>
+			<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
+						Rent
+					</button>
+				</div>
+			</div>
+			<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
+						Rent
+					</button>
+				</div>
+			</div>
+			<div class="listJerseys col-xs-3">
+				<img class="jerseyImg" src="http://www.packersofficialonlineshop.com/images//nike_nfl_jerseys/nike_green_bay_packers/nike_packers_042.jpg">
+
+				<div class=" inListJerseys col-xs-12">	
+					<button type="button" class="rentBtn btn btn-success" >
+						delete
+					</button>
+					<button type="button" class="rentBtn btn btn-success" >
 						Rent
 					</button>
 				</div>
@@ -24,12 +99,18 @@
 		</div>
 	</div>	
 </div>
-<div class="mapCunt" [ngClass]="displayText">
+<div class="mapHalf" [ngClass]="displayText">
 	
 	<sebm-google-map #bucks [latitude]="44.5008" [longitude]="-88.0573">
 	  	<sebm-google-map-marker *ngFor="let jersey of jerseys  | async" [latitude]="jersey.lat" [longitude]="jersey.long">
+	  	<sebm-google-map-info-window>
+	  	<div class="bucks">
+	  		<strong>{{jersey.name}}{{jersey.long}}{{jersey.lat}}</strong>
+          <button class="bucksButton">berks</button>`
+	  	</div>
+          
+        </sebm-google-map-info-window>
 		</sebm-google-map-marker>
-		<sebm-google-map-marker *ngFor="let jersey of markers" [latitude]="jersey.lat" [longitude]="jersey.long">
-		</sebm-google-map-marker>
+
 	</sebm-google-map>
 </div>

@@ -16,14 +16,24 @@ export class FindJerseyComponent implements OnInit {
 	displayText: string;
 	form: {sideView: boolean};
   jersey: any;
-jerseys: FirebaseListObservable<any[]>;
-
+  //jerseys: FirebaseListObservable<any[]>;
+  //jerseys:any[];
 	  constructor( public af: AngularFire, private _jerseyService: JerseyService) {
 	   //this.jerseys = this.af.database.list('jerseys');
-    this.jerseys = _jerseyService.getJerseys();
+    //this.jerseys = _jerseyService.getJerseys();
+   //this.jerseys.push( { id: 0, name: "Available" });
+
+   // = [
+   // { "id": 0, "name": "Available" },
+   // { "id": 1, "name": "Ready" },
+    //{ "id": 2, "name": "Started" }
+    //];
+
 		this.visible = true;
     this.gameVisible = false;		
 		this.displayText = 'col-xs-6';
+
+
 
 	  	this.form = {
 	  		sideView: true
@@ -32,18 +42,15 @@ jerseys: FirebaseListObservable<any[]>;
 	};
 
   ngOnInit() {
+      //this.jerseys = this._jerseyService.getJerseys();
 
-  //bucks
- // console.log(this.jerseys);
- // console.log(jersey);
-  }
-
+  };
     toggle() {
     this.visible = !this.visible;
     this.displayText = this.visible ? 'col-xs-6' : 'col-xs-12';
 
-    console.log(this.visible);
-    console.log(this.displayText);
+  //  console.log(this.visible);
+    //console.log(this.displayText);
 
   };
    toggleGameView() {
@@ -54,23 +61,21 @@ jerseys: FirebaseListObservable<any[]>;
    andSix(jersey){
       console.log(this._jerseyService.getJerseys());
     };
-    createJersey(title: string) {
-      console.log(this._jerseyService.createJersey(title));
+    createJersey(id: any) {
+      //console.log(this._jerseyService.createJersey(id));
+    //return this.jerseys$.push(new Jersey(id));
+  };
+    deleteJersey(id: any) {
+    //console.log("id", id);
+      console.log(this._jerseyService.deleteJersey(id));
     //return this.jerseys$.push(new Jersey(title));
   };
+  rentJersey(key: string){
+    let newJersey = this._jerseyService.getJerseyById(key);
+    //console.log(this._jerseyService.getJerseyById(key));
+    //console.log("rent jersey Done", newJersey);
+  }
 
-  markers: marker[] = [
-  	{
-  		lat:44.5008,
-  		long: -88.0473,
-  		label: 'cunt'
-  	},
-  	{
-  		lat:44.5008,
-  		long: -88.1473,
-  		label: 'cunt'
-  	}
-  ];
 
 }
   interface marker {

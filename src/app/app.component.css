@@ -1,10 +1,10 @@
-.navbar-default{
-	background-color:#008000;
-}
-.navbar a{
-	color:white;
-	size:30px;
-}
+.navbar {
+
+    font-family: 'Cinzel', serif;
+	color:black;
+	size:40px;
+/*	text-transform: uppercase;
+*/}
 .sebm-google-map-container {
 	height: 300px;	
 }
@@ -12,4 +12,33 @@
 	float:left;
 	height:100%;
 	width:100%;
+}
+.no{
+	padding-top:0px;
+}
+.navbar {
+	background-color:white;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+   	border: 0px solid;
+   	border-radius:0px;
+   		vetical-align:center;
+
+}
+.navbar-bottom{
+	background-color:white;
+	border-bottom-style: solid;
+	border-bottom-width:1px;
+	border-color:lightgrey;
+
+	vetical-align:center;
+}
+.btn-5 {
+	padding:0px;
+	margin:15px;
+}
+.btn-5:hover {
+	border-radius:0px;
+  border-bottom: 1px solid blue;
 }
